@@ -19,9 +19,11 @@ static double getRandomDouble(double mean, double dev) {
 	return std::round(dist(random_engine));
 }
 
-static int getRandomInt(int max) {
+static int getRandomInt(const int max) {
 	std::uniform_int_distribution<int> dist(18, max);
 	return dist(random_engine);
 }
+
+
 
 #endif
