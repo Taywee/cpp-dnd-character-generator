@@ -7,6 +7,8 @@
 
 namespace tables { 
 
+
+
 static const std::vector<std::string> allignments {
 	"Lawful Good",
 	"Neutral Good",
