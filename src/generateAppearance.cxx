@@ -8,7 +8,7 @@
 using namespace nlohmann;
 
 std::map<std::string, int> generateAppearance(std::string race) {
-	std::ifstream i("tables.json");
+	std::ifstream i("../data/tables.json");
 	json tables;
 	i >> tables;
 	std::map<std::string, int> attributes;
@@ -29,7 +29,7 @@ std::map<std::string, int> generateAppearance(std::string race) {
 
 	static std::normal_distribution<double> weightDistribution{
 		tables[race]["weight"]["mean"],
-		tables[race]["weight"]["distribution"]
+		tables[race]["weight"]["deviation"]
 	};
 
 	attributes.insert({"Age", static_cast<int>(ageDistribution(engine))});
