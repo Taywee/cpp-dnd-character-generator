@@ -15,7 +15,7 @@ std::unique_ptr<Race> Human::generate() {
 
 std::string Human::generateCharacterName() {
 
-	static std::default_random_engine engine{static_cast<std::default_random_engine>(std::random_device{}())};
+	static std::default_random_engine engine{static_cast<std::default_random_engine::result_type>(std::random_device{}())};
 	static std::uniform_int_distribution<std::uint8_t> distribution{0, 1};
 
 	switch (distribution(engine)) {

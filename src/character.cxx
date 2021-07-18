@@ -1,5 +1,6 @@
 #include "character.hxx"
 #include "attributes.hxx"
+#include "generateAppearance.hxx"
 #include <iostream>
 #include <memory>
 #include <random>
@@ -9,10 +10,9 @@ Character::Character() {
 	setAttributes(m_attributes);
 	m_race = Race::generate(); 
 	m_name = m_race->generateCharacterName();
-
+	m_appearance = generateAppearance(m_race->raceName());
+	
 }
-
-Character::Character(std::unique_ptr<Race> race, std::string name) : m_race(std::move(race)), m_name(std::move(name)) {}
 
 void Character::getAttributes() {
 	for (int attribute : m_attributes) {
@@ -20,6 +20,14 @@ void Character::getAttributes() {
 	}
 	 std::cout << '\n';
 }
+
+void Character::getPhysAttributes() {
+	for (auto& [key, value] : m_appearance) {
+		std::cout << key << ": " << value << '\n';
+	}
+	std::cout << std::endl;
+}
+
 std::string Character::getName() { return m_name; }
 const Race &Character::getRace() const { return *m_race; }
 Race &Character::getRace() { return *m_race; }

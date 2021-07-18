@@ -15,5 +15,6 @@ add_executable(
     src/main.cxx
     src/race.cxx
     src/attributes.cxx
+    src/generateAppearance.cxx
     )
 

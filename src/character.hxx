@@ -4,6 +4,7 @@
 #include <array>
 #include <memory>
 #include <string>
+#include <map>
 #include "race.hxx"
 
 class Character {
@@ -11,15 +12,15 @@ class Character {
 private:
 	std::unique_ptr<Race> m_race;
 	std::string m_name;
+	std::map<std::string, int> m_appearance;
 	std::array<int, 6> m_attributes;
 
 public:
 	Character();
 
-	Character(std::unique_ptr<Race> race, std::string name);
-
 	void getAttributes();
 	std::string getName();
+	void getPhysAttributes();
 	const Race &getRace() const;
 	Race &getRace();
 
