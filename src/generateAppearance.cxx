@@ -17,17 +17,17 @@ std::map<std::string, int> generateAppearance(std::string race) {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())
 	};
 
-	static std::uniform_int_distribution<unsigned int> ageDistribution{ 
+	std::uniform_int_distribution<unsigned int> ageDistribution{ 
 		tables[race]["age"]["min"], 
 		tables[race]["age"]["max"]
 	};
 
-	static std::normal_distribution<double> heightDistribution{
+	std::normal_distribution<double> heightDistribution{
 		tables[race]["height"]["mean"],
 		tables[race]["height"]["deviation"]
 	};
 
-	static std::normal_distribution<double> weightDistribution{
+	std::normal_distribution<double> weightDistribution{
 		tables[race]["weight"]["mean"],
 		tables[race]["weight"]["deviation"]
 	};
