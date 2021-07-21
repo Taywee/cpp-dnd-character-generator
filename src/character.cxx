@@ -10,15 +10,23 @@ Character::Character() {
 	setAttributes(m_attributes);
 	m_race = Race::generate(); 
 	m_name = m_race->generateCharacterName();
+	m_languages = m_race->generateLanguages();
 	m_appearance = generateAppearance(m_race->raceName());
 	
+}
+
+void Character::getLanguages() {
+	for (auto& language : m_languages) {
+		std::cout << language << ' ';
+	}
+	std::cout << std::endl;
 }
 
 void Character::getAttributes() {
 	for (int attribute : m_attributes) {
 		std::cout << attribute << ' ';
 	}
-	 std::cout << '\n';
+	 std::cout << std::endl;
 }
 
 void Character::getPhysAttributes() {

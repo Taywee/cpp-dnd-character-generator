@@ -1,9 +1,14 @@
 #include "dwarf.hxx"
 #include "hilldwarf.hxx"
+#include "json.hpp"
 #include <memory>
+#include <fstream>
 #include <random>
 #include <cstdint>
 #include <string>
+#include <vector>
+
+using namespace nlohmann;
 
 Dwarf::Dwarf() {}
 
@@ -24,15 +29,31 @@ std::unique_ptr<Race> Dwarf::generate() {
 }
 
 std::string Dwarf::generateCharacterName() {
+
+	std::ifstream i("../data/tables.json");
+	json tables;
+	i >> tables;
+
 	static std::default_random_engine engine{static_cast<std::default_random_engine::result_type>(std::random_device{}())};
-	static std::uniform_int_distribution<std::uint8_t> distribution{0, 1};
+	static std::uniform_int_distribution<std::uint8_t> distribution{
+		0, static_cast<unsigned char>((tables["Dwarf"]["maleNames"]).size()-1)
+	};
 
-	switch (distribution(engine)) {
-		case 0:
-			return "Gimli";
+	return tables["Dwarf"]["maleNames"][distribution(engine)];
 
-		case 1:
-			return "Gotern";
-		}
-	__builtin_unreachable();
+	}
+
+std::vector<std::string> Dwarf::generateLanguages() {
+	
+	std::ifstream i("../data/tables.json");
+	json tables;
+	i >> tables;
+
+	std::vector<std::string> langs;
+
+	for (std::string element : tables["Dwarf"]["languages"]) {
+		langs.push_back(element);
+	}
+
+	return langs;
 }

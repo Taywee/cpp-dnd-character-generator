@@ -5,6 +5,7 @@
 #include <memory>
 #include <string>
 #include <map>
+#include <vector>
 #include "race.hxx"
 
 class Character {
@@ -14,13 +15,15 @@ private:
 	std::string m_name;
 	std::map<std::string, int> m_appearance;
 	std::array<int, 6> m_attributes;
+	std::vector<std::string> m_languages;
 
 public:
 	Character();
 
 	void getAttributes();
-	std::string getName();
+	void getLanguages();
 	void getPhysAttributes();
+	std::string getName();
 	const Race &getRace() const;
 	Race &getRace();
 
