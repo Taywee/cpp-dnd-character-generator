@@ -15,21 +15,21 @@ Character::Character() {
 	
 }
 
-void Character::getLanguages() {
+void Character::printLanguages() {
 	for (auto& language : m_languages) {
 		std::cout << language << ' ';
 	}
 	std::cout << std::endl;
 }
 
-void Character::getAttributes() {
+void Character::printAttributes() {
 	for (int attribute : m_attributes) {
 		std::cout << attribute << ' ';
 	}
 	 std::cout << std::endl;
 }
 
-void Character::getPhysAttributes() {
+void Character::printPhysAttributes() {
 	for (auto& [key, value] : m_appearance) {
 		std::cout << key << ": " << value << '\n';
 	}

@@ -20,9 +20,9 @@ private:
 public:
 	Character();
 
-	void getAttributes();
-	void getLanguages();
-	void getPhysAttributes();
+	void printAttributes();
+	void printLanguages();
+	void printPhysAttributes();
 	std::string getName();
 	const Race &getRace() const;
 	Race &getRace();
