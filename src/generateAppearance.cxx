@@ -17,7 +17,7 @@ std::map<std::string, int> generateAppearance(std::string race) {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())
 	};
 
-	static std::uniform_int_distribution<std::uint8_t> ageDistribution{ 
+	static std::uniform_int_distribution<unsigned int> ageDistribution{ 
 		tables[race]["age"]["min"], 
 		tables[race]["age"]["max"]
 	};
