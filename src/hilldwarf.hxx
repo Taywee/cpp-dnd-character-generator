@@ -12,6 +12,7 @@ public:
 	HillDwarf();
 
 	std::string raceName() override;
+	std::string parentRace() override;
 	std::vector<std::string> generateRacialFeatures() override;
 	static std::unique_ptr<Race> generate();
 };

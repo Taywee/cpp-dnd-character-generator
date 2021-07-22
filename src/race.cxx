@@ -8,6 +8,7 @@
 #include <random>
 #include <cstdint>
 #include <fstream>
+#include <vector>
 
 using namespace nlohmann;
 
@@ -22,10 +23,7 @@ std::unique_ptr<Race> Race::generate() {
 	static std::default_random_engine engine {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())
 	};
-
-	static std::uniform_int_distribution<std::uint8_t> distribution {
-		0, 1 
-	};
+	std::uniform_int_distribution<std::uint8_t> distribution {0, 1};
 	
 	switch (distribution(engine)) {
 		case 0:
@@ -38,3 +36,4 @@ std::unique_ptr<Race> Race::generate() {
 
 	}
 }
+

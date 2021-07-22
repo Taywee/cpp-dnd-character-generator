@@ -4,12 +4,15 @@
 int main(int argc, char **argv) {
 
 	Character character;
-	std::cout << character.getName() << ": " << character.getRace().raceName() << std::endl;
+	std::cout << character.getName() << ": " << character.getRace().raceName() << '\n';
+	std::cout << "gender: " << character.getGender() << '\n';
+	std::cout << "alignment: " << character.getAlignment() << '\n';
 	character.printAttributes(); 
 	character.printPhysAttributes();
 	character.printRacialFeatures();
 	character.printLanguages();
 	character.printSpeed();
+	character.printProficiencies();
 	
 	return 0;
 }

@@ -16,28 +16,11 @@ Human::Human(int speed) :
 
 int Human::getSpeed() { return r_speed; }
 std::string Human::raceName() { return "Human"; }
+std::string Human::parentRace() { return "Human"; }
 
 std::unique_ptr<Race> Human::generate() {
 	return std::make_unique<Human>();
 }
-
-std::string Human::generateCharacterName() {
-
-	std::ifstream i("../data/tables.json");
-	json tables;
-	i >> tables;
-
-	static std::default_random_engine engine {
-		static_cast<std::default_random_engine::result_type>(std::random_device{}())
-	};
-
-	static std::uniform_int_distribution<std::uint8_t> distribution {
-		0, static_cast<unsigned char>((tables["Human"]["maleNames"]).size()-1)
-	};
-
-	return tables["Human"]["maleNames"][distribution(engine)];
-
-	}
 
 std::vector<std::string> Human::generateLanguages() {
 
@@ -56,7 +39,7 @@ std::vector<std::string> Human::generateLanguages() {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())
 	};
 
-	static std::uniform_int_distribution<std::uint8_t> distribution {
+	std::uniform_int_distribution<std::uint8_t> distribution {
 		0, static_cast<unsigned char>((tables["languages"].size()-1))
 	};
 

@@ -10,6 +10,17 @@
     "Half-Orc",
     "Tiefling"
   ],
+  "alignment":[
+    "lawful good",
+    "neutral good",
+    "chaotic good",
+    "lawful neutral",
+    "true neutral",
+    "chaotic neutral",
+    "lawful evil",
+    "neutral evil",
+    "chaotic evil"
+  ],
   "Human":{
     "height":{
       "min":152,
@@ -28,7 +39,10 @@
       "max":90,
       "mean":54
     },
-    "maleNames":["Hans", "Dorris", "Dan", "Menroth", "Jim", "Plemeloa", "Tom"],
+    "names":{
+      "male":["Bill", "Bob", "Nob"],
+      "female":["Anna", "Sandy", "Alice"]
+    },
     "languages":["common"]
   },
   "Dwarf":{
@@ -49,6 +63,10 @@
       "max":350,
       "mean":200
     },
+    "names":{
+      "male":["Gotern", "Gimli", "Alrick"],
+      "female":["Amber", "Dagnal", "Hlin"]
+    },
     "features":[
       "darkvision",
       "dwarven resilience",
@@ -65,28 +83,10 @@
       "brewer's supplies",
       "mason's tools"
     ],
-    "maleNames":["Gimli", "Gotern", "Oloric", "Adrik", "Gloin", "Baldur"],
     "languages":["common", "dwarvish"]
   },
   "HillDwarf":{
-    "height":{
-      "min":122,
-      "max":152,
-      "mean":137,
-      "deviation":7
-    },
-    "weight":{
-      "min":45,
-      "max":90,
-      "mean": 72,
-      "deviation":10
-    },
-    "age":{
-      "min":50,
-      "max":350,
-      "mean":200
-    },
-    "features":[
+   "features":[
       "dwarven toughness"
     ]
   },

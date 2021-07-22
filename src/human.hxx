@@ -18,7 +18,7 @@ public:
 
 	int getSpeed() override;
 	std::string raceName() override;
-	std::string generateCharacterName() override;
+	std::string parentRace() override;
 	std::vector<std::string> generateLanguages() override;
 	std::vector<std::string> generateRacialFeatures() override;
 	static std::unique_ptr<Race> generate();

@@ -12,10 +12,29 @@ using namespace nlohmann;
 
 Dwarf::Dwarf(int speed) :
 	r_speed { speed }
-{}
+{
+	std::ifstream i("../data/tables.json");
+	json tables;
+	i >> tables;
+
+	for (std::string proficiencies : tables["Dwarf"]["weapon proficiencies"]) {
+		r_weaponProficiencies.push_back(proficiencies);
+	}
+
+	static std::default_random_engine engine { 
+		static_cast<std::default_random_engine::result_type>(std::random_device{}())
+	};
+
+	std::uniform_int_distribution<std::uint8_t> distribution { 
+		0, static_cast<unsigned char>((tables["Dwarf"]["tool proficiencies"].size()-1))
+	};
+
+	r_toolProficiencies.push_back(tables["Dwarf"]["tool proficiencies"][distribution(engine)]);
+}
 
 int Dwarf::getSpeed() { return r_speed; }
 std::string Dwarf::raceName() { return "Dwarf"; }
+std::string Dwarf::parentRace() { return "Dwarf"; } 
 
 std::unique_ptr<Race> Dwarf::generate() {
 	
@@ -23,7 +42,7 @@ std::unique_ptr<Race> Dwarf::generate() {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())
 	};
 
-	static std::uniform_int_distribution<std::uint8_t> distribution{0, 1};
+	std::uniform_int_distribution<std::uint8_t> distribution{0, 1};
 
 	switch (distribution(engine)) {
 		case 0:
@@ -34,24 +53,6 @@ std::unique_ptr<Race> Dwarf::generate() {
 	}
 	__builtin_unreachable();
 }
-
-std::string Dwarf::generateCharacterName() {
-
-	std::ifstream i("../data/tables.json");
-	json tables;
-	i >> tables;
-
-	static std::default_random_engine engine {
-		static_cast<std::default_random_engine::result_type>(std::random_device{}())
-	};
-
-	static std::uniform_int_distribution<std::uint8_t> distribution{
-		0, static_cast<unsigned char>((tables["Dwarf"]["maleNames"]).size()-1)
-	};
-
-	return tables["Dwarf"]["maleNames"][distribution(engine)];
-
-	}
 
 std::vector<std::string> Dwarf::generateLanguages() {
 	
@@ -81,3 +82,4 @@ std::vector<std::string> Dwarf::generateRacialFeatures() {
 
 	return features;
 }
+

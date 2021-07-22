@@ -1,4 +1,5 @@
 #include "hilldwarf.hxx"
+#include "dwarf.hxx"
 #include "json.hpp"
 
 #include <memory>
@@ -9,9 +10,11 @@
 
 using namespace nlohmann;
 
-HillDwarf::HillDwarf() {}
+HillDwarf::HillDwarf() :
+	Dwarf(){}
 
 std::string HillDwarf::raceName() { return "HillDwarf"; }
+std::string HillDwarf::parentRace() { return "Dwarf"; }
 
 std::unique_ptr<Race> HillDwarf::generate() {
 		return std::make_unique<HillDwarf>();
