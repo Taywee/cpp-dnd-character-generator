@@ -10,12 +10,17 @@
 
 class Human : public Race {
 
-public:
-	Human();
+private:
+	int r_speed = 30;
 
+public:
+	Human(int speed=30);
+
+	int getSpeed() override;
 	std::string raceName() override;
 	std::string generateCharacterName() override;
 	std::vector<std::string> generateLanguages() override;
+	std::vector<std::string> generateRacialFeatures() override;
 	static std::unique_ptr<Race> generate();
 };
 

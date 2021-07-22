@@ -10,12 +10,19 @@
 
 using namespace nlohmann;
 
-Dwarf::Dwarf() {}
+Dwarf::Dwarf(int speed) :
+	r_speed { speed }
+{}
 
+int Dwarf::getSpeed() { return r_speed; }
 std::string Dwarf::raceName() { return "Dwarf"; }
 
 std::unique_ptr<Race> Dwarf::generate() {
-	static std::default_random_engine engine{static_cast<std::default_random_engine::result_type>(std::random_device{}())};
+	
+	static std::default_random_engine engine {
+		static_cast<std::default_random_engine::result_type>(std::random_device{}())
+	};
+
 	static std::uniform_int_distribution<std::uint8_t> distribution{0, 1};
 
 	switch (distribution(engine)) {
@@ -34,7 +41,10 @@ std::string Dwarf::generateCharacterName() {
 	json tables;
 	i >> tables;
 
-	static std::default_random_engine engine{static_cast<std::default_random_engine::result_type>(std::random_device{}())};
+	static std::default_random_engine engine {
+		static_cast<std::default_random_engine::result_type>(std::random_device{}())
+	};
+
 	static std::uniform_int_distribution<std::uint8_t> distribution{
 		0, static_cast<unsigned char>((tables["Dwarf"]["maleNames"]).size()-1)
 	};
@@ -56,4 +66,18 @@ std::vector<std::string> Dwarf::generateLanguages() {
 	}
 
 	return langs;
+}
+
+std::vector<std::string> Dwarf::generateRacialFeatures() {
+	std::ifstream i("../data/tables.json");
+	json tables;
+	i >> tables;
+
+	std::vector<std::string> features;
+
+	for (std::string element : tables["Dwarf"]["features"]) {
+		features.push_back(element);
+	}
+
+	return features;
 }

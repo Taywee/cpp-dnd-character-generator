@@ -7,10 +7,13 @@
 
 // Function that returns the sum of the results of the 3 highest of 4 d6 rolls
 int rollAttributes() {
-	static std::default_random_engine engine{ static_cast<std::default_random_engine::result_type>(std::random_device{}())};
+
+	static std::default_random_engine engine{ 
+		static_cast<std::default_random_engine::result_type>(std::random_device{}())
+	};
+
 	static std::uniform_int_distribution<> distribution{ 1, 6 };
 	
-	// Create a vector to hold the roll results
 	std::vector<int> results;
 
 	// Loop to add results from 4d6 rolls

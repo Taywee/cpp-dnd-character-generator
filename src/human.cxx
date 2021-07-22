@@ -10,8 +10,11 @@
 
 using namespace nlohmann;
 
-Human::Human() {}
+Human::Human(int speed) :
+	r_speed { speed }
+{}
 
+int Human::getSpeed() { return r_speed; }
 std::string Human::raceName() { return "Human"; }
 
 std::unique_ptr<Race> Human::generate() {
@@ -61,4 +64,10 @@ std::vector<std::string> Human::generateLanguages() {
 
 	return langs;
 
+}
+
+std::vector<std::string> Human::generateRacialFeatures() {
+	std::vector<std::string> features{};
+
+	return features;
 }

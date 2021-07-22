@@ -1,4 +1,15 @@
 {
+  "Races":[
+    "Dwarf",
+    "Elf",
+    "Halfling",
+    "Human",
+    "Dragonborn",
+    "Gnome",
+    "Half-Elf",
+    "Half-Orc",
+    "Tiefling"
+  ],
   "Human":{
     "height":{
       "min":152,
@@ -38,6 +49,22 @@
       "max":350,
       "mean":200
     },
+    "features":[
+      "darkvision",
+      "dwarven resilience",
+      "stonecunning"
+    ],
+    "weapon proficiencies":[
+      "battleaxe",
+      "handaxe",
+      "light hammer",
+      "warhammer"
+    ],
+    "tool proficiencies":[
+      "smith's tools",
+      "brewer's supplies",
+      "mason's tools"
+    ],
     "maleNames":["Gimli", "Gotern", "Oloric", "Adrik", "Gloin", "Baldur"],
     "languages":["common", "dwarvish"]
   },
@@ -58,7 +85,10 @@
       "min":50,
       "max":350,
       "mean":200
-    }
+    },
+    "features":[
+      "dwarven toughness"
+    ]
   },
   "languages":[
     "dwarvish", 

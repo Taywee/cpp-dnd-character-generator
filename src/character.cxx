@@ -11,13 +11,27 @@ Character::Character() {
 	m_race = Race::generate(); 
 	m_name = m_race->generateCharacterName();
 	m_languages = m_race->generateLanguages();
+	m_racialFeatures = m_race->generateRacialFeatures();
 	m_appearance = generateAppearance(m_race->raceName());
+	m_speed = m_race->getSpeed();
 	
 }
 
+void Character::printSpeed() { 
+	std::cout << "Speed: " << m_speed << std::endl;
+}
+
+void Character::printRacialFeatures() {
+	std::cout << "Racial features: ";
+	for (auto& feature : m_racialFeatures) {
+		std::cout << feature << ", ";
+	}
+	std::cout << std::endl;
+}
 void Character::printLanguages() {
+	std::cout << "Languages: ";
 	for (auto& language : m_languages) {
-		std::cout << language << ' ';
+		std::cout << language << ", ";
 	}
 	std::cout << std::endl;
 }

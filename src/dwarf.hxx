@@ -8,12 +8,17 @@
 
 class Dwarf : public Race {
 
+private:
+	int r_speed = 25;	
+
 public:
-	Dwarf();
+	Dwarf(int speed=25);
 	
+	int getSpeed() override;
 	std::string raceName() override;
 	std::string generateCharacterName() override;
 	std::vector<std::string> generateLanguages() override;
+	std::vector<std::string> generateRacialFeatures() override;
 	static std::unique_ptr<Race> generate();
 };
 
