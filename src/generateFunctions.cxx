@@ -10,15 +10,6 @@
 
 using namespace nlohmann;
 
-void addProficiencies(
-		std::vector<std::string> r_proficiencies, 
-		std::vector<std::string> m_proficiencies) { 
-
-	for (std::string &proficiency : r_proficiencies) {
-		m_proficiencies.push_back(proficiency);
-	}
-}
-
 std::string generateAlignment() {
 	std::ifstream i("../data/tables.json");
 	json tables;
@@ -84,6 +75,20 @@ std::map<std::string, int> generateAppearance(std::string race) {
 	attributes.insert({"Weight", static_cast<int>(weightDistribution(engine))});
 
 	return attributes;
+}
+
+std::vector<std::string> generateData(std::string parentRace, std::string category) {
+	std::ifstream i("../data/tables.json");
+	json tables;
+	i >> tables;
+	
+	std::vector<std::string> data;
+
+	for (std::string element : tables[parentRace][category]) {
+		data.push_back(element);
+	}
+
+	return data;
 }
 
 std::string generateCharacterName(std::string race, std::string gender) {

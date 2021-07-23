@@ -8,12 +8,15 @@
 
 class HillDwarf : public Dwarf {
 
+private:
+	std::string r_raceName{ "HillDwarf" };
+	std::string r_parentRace{ "Dwarf" };
+
 public:
-	HillDwarf();
+	HillDwarf(std::string race="HillDwarf", std::string parent="Dwarf");
 
 	std::string raceName() override;
 	std::string parentRace() override;
-	std::vector<std::string> generateRacialFeatures() override;
 	static std::unique_ptr<Race> generate();
 };
 

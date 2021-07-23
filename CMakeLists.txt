@@ -12,6 +12,7 @@ add_executable(
     src/dwarf.cxx
     src/hilldwarf.cxx
     src/human.cxx
+    src/elf.cxx
     src/main.cxx
     src/race.cxx
     src/attributes.cxx

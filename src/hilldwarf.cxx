@@ -1,5 +1,6 @@
 #include "hilldwarf.hxx"
 #include "dwarf.hxx"
+#include "generateFunctions.hxx"
 #include "json.hpp"
 
 #include <memory>
@@ -10,8 +11,19 @@
 
 using namespace nlohmann;
 
-HillDwarf::HillDwarf() :
-	Dwarf(){}
+HillDwarf::HillDwarf(std::string race, std::string parent) :
+	Dwarf(),
+	r_raceName{ race },
+	r_parentRace{ parent }
+{
+	std::ifstream i("../data/tables.json");
+	json tables;
+	i >> tables;
+
+	for (std::string feature : tables["HillDwarf"]["features"]) {
+		r_racialFeatures.push_back(feature);
+	}
+}
 
 std::string HillDwarf::raceName() { return "HillDwarf"; }
 std::string HillDwarf::parentRace() { return "Dwarf"; }
@@ -19,21 +31,3 @@ std::string HillDwarf::parentRace() { return "Dwarf"; }
 std::unique_ptr<Race> HillDwarf::generate() {
 		return std::make_unique<HillDwarf>();
 	}
-
-std::vector<std::string> HillDwarf::generateRacialFeatures() {
-	std::ifstream i("../data/tables.json");
-	json tables;
-	i >> tables;
-
-	std::vector<std::string> features;
-
-	for (std::string feature : tables["Dwarf"]["features"]) {
-		features.push_back(feature);
-	}
-
-	for(std::string feature : tables["HillDwarf"]["features"]) {
-		features.push_back(feature);
-	}
-
-	return features;
-}

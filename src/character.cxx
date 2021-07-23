@@ -13,31 +13,19 @@ Character::Character() {
 	m_gender = generateGender();
 	m_name = generateCharacterName(m_race->parentRace(), m_gender);
 	m_alignment = generateAlignment();
-	m_languages = m_race->generateLanguages();
-	m_racialFeatures = m_race->generateRacialFeatures();
 	m_appearance = generateAppearance(m_race->parentRace());
 	m_speed = m_race->getSpeed();
-
-	addProficiencies(
-			m_race->r_skillProficiencies, 
-			m_skillProficiencies);
-
-	addProficiencies(
-			m_race->r_toolProficiencies, 
-			m_toolProficiencies);
-
-	addProficiencies(
-			m_race->r_armorProficiencies, 
-			m_armorProficiencies);
-
-	addProficiencies(
-			m_race->r_weaponProficiencies, 
-			m_weaponProficiencies);
+	m_languages = m_race->r_languages;
+	m_racialFeatures= m_race->r_racialFeatures;
+	m_skillProficiencies = m_race->r_skillProficiencies;
+	m_armorProficiencies = m_race->r_armorProficiencies;
+	m_weaponProficiencies = m_race->r_weaponProficiencies;
+	m_toolProficiencies = m_race->r_toolProficiencies;
 
 }
 
 void Character::printSpeed() { 
-	std::cout << "Speed: " << m_speed << std::endl;
+	std::cout << "Speed: " << m_speed << '\n';
 }
 
 void Character::printRacialFeatures() {
@@ -45,28 +33,29 @@ void Character::printRacialFeatures() {
 	for (auto& feature : m_racialFeatures) {
 		std::cout << feature << ", ";
 	}
-	std::cout << std::endl;
+	std::cout << '\n';
 }
+
 void Character::printLanguages() {
 	std::cout << "Languages: ";
 	for (auto& language : m_languages) {
 		std::cout << language << ", ";
 	}
-	std::cout << std::endl;
+	std::cout << '\n';
 }
 
 void Character::printAttributes() {
 	for (int attribute : m_attributes) {
 		std::cout << attribute << ' ';
 	}
-	 std::cout << std::endl;
+	 std::cout << '\n';
 }
 
 void Character::printPhysAttributes() {
 	for (auto& [key, value] : m_appearance) {
 		std::cout << key << ": " << value << '\n';
 	}
-	std::cout << std::endl;
+	std::cout << '\n';
 }
 
 void Character::printProficiencies() {

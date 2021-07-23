@@ -1,6 +1,8 @@
 #include "dwarf.hxx"
 #include "hilldwarf.hxx"
 #include "json.hpp"
+#include "generateFunctions.hxx"
+
 #include <memory>
 #include <fstream>
 #include <random>
@@ -10,16 +12,14 @@
 
 using namespace nlohmann;
 
-Dwarf::Dwarf(int speed) :
-	r_speed { speed }
+Dwarf::Dwarf(int speed, std::string race, std::string parent) :
+	r_speed { speed },
+	r_raceName { race },
+	r_parentRace { parent }
 {
 	std::ifstream i("../data/tables.json");
 	json tables;
 	i >> tables;
-
-	for (std::string proficiencies : tables["Dwarf"]["weapon proficiencies"]) {
-		r_weaponProficiencies.push_back(proficiencies);
-	}
 
 	static std::default_random_engine engine { 
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())
@@ -30,11 +30,10 @@ Dwarf::Dwarf(int speed) :
 	};
 
 	r_toolProficiencies.push_back(tables["Dwarf"]["tool proficiencies"][distribution(engine)]);
+	r_weaponProficiencies = generateData("Dwarf", "weapon proficiencies");
+	r_languages = generateData("Dwarf", "languages");
+	r_racialFeatures = generateData("Dwarf", "features");
 }
-
-int Dwarf::getSpeed() { return r_speed; }
-std::string Dwarf::raceName() { return "Dwarf"; }
-std::string Dwarf::parentRace() { return "Dwarf"; } 
 
 std::unique_ptr<Race> Dwarf::generate() {
 	
@@ -54,32 +53,6 @@ std::unique_ptr<Race> Dwarf::generate() {
 	__builtin_unreachable();
 }
 
-std::vector<std::string> Dwarf::generateLanguages() {
-	
-	std::ifstream i("../data/tables.json");
-	json tables;
-	i >> tables;
-
-	std::vector<std::string> langs;
-
-	for (std::string element : tables["Dwarf"]["languages"]) {
-		langs.push_back(element);
-	}
-
-	return langs;
-}
-
-std::vector<std::string> Dwarf::generateRacialFeatures() {
-	std::ifstream i("../data/tables.json");
-	json tables;
-	i >> tables;
-
-	std::vector<std::string> features;
-
-	for (std::string element : tables["Dwarf"]["features"]) {
-		features.push_back(element);
-	}
-
-	return features;
-}
-
+int Dwarf::getSpeed() { return r_speed; }
+std::string Dwarf::raceName() { return "Dwarf"; }
+std::string Dwarf::parentRace() { return "Dwarf"; } 

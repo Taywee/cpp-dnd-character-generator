@@ -1,15 +1,4 @@
 {
-  "Races":[
-    "Dwarf",
-    "Elf",
-    "Halfling",
-    "Human",
-    "Dragonborn",
-    "Gnome",
-    "Half-Elf",
-    "Half-Orc",
-    "Tiefling"
-  ],
   "alignment":[
     "lawful good",
     "neutral good",
@@ -43,7 +32,12 @@
       "male":["Bill", "Bob", "Nob"],
       "female":["Anna", "Sandy", "Alice"]
     },
-    "languages":["common"]
+    "languages":["common"],
+    "features":[],
+    "skill proficiencies":[],
+    "armor proficiencies":[],
+    "weapon proficiencies":[],
+    "tool proficiencies":[]
   },
   "Dwarf":{
     "height":{
@@ -72,6 +66,8 @@
       "dwarven resilience",
       "stonecunning"
     ],
+    "skill proficiencies":[],
+    "armor proficiencies":[],
     "weapon proficiencies":[
       "battleaxe",
       "handaxe",

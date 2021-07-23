@@ -10,18 +10,21 @@
 
 class Human : public Race {
 
-private:
+protected:
 	int r_speed = 30;
+	std::string r_raceName { "Human" };
+	std::string r_parentRace { "Human" };
 
 public:
-	Human(int speed=30);
+	Human(int speed=30, std::string race="Human", std::string parent="Human");
 
 	int getSpeed() override;
 	std::string raceName() override;
 	std::string parentRace() override;
-	std::vector<std::string> generateLanguages() override;
-	std::vector<std::string> generateRacialFeatures() override;
 	static std::unique_ptr<Race> generate();
+
+	friend class Character;
+
 };
 
 #endif
