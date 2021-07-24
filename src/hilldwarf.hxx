@@ -4,7 +4,6 @@
 #include "dwarf.hxx"
 #include <memory>
 #include <string>
-#include <vector>
 
 class HillDwarf : public Dwarf {
 

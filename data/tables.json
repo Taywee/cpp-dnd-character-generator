@@ -86,6 +86,87 @@
       "dwarven toughness"
     ]
   },
+  "Elf":{
+    "height":{
+      "min":152,
+      "max":213,
+      "mean":183,
+      "deviation":10
+    },
+    "weight":{
+      "min":31,
+      "max":68,
+      "mean":50,
+      "deviation":7
+    },
+    "age":{
+      "min":18,
+      "max":750,
+      "mean":384
+    },
+    "names":{
+      "male":["Adran", "Beiro", "Carric", "Enialis", "Galinndan"],
+      "female":["Adrie", "Althaea", "Bethrynna", "Caelynn", "Drusilia"]
+    },
+    "features":[
+      "darkvision", 
+      "fey ancestry", 
+      "trance"
+    ],
+    "skill proficiencies":["perception"],
+    "armor proficiencies": [],
+    "weapon proficiencies": [],
+    "tool proficiencies": [],
+    "languages":["common", "elvish"]
+  },
+  "HighElf":{
+    "weapon proficiencies": [
+      "longsword", 
+      "shortsword", 
+      "shortbow", 
+      "longbow"
+    ]
+  },
+  "Dragonborn":{
+    "height":{
+      "min":182,
+      "max":228,
+      "mean":205,
+      "deviation":10
+    },
+    "weight":{
+      "min":150,
+      "max":350,
+      "mean":250,
+      "deviation":20
+    },
+    "age":{
+      "min":15,
+      "max":80,
+      "mean":48
+    },
+    "names":{
+      "male":["Arjhan", "Balasar", "Donaar", "Ghesh", "Heskan"],
+      "female":["Akra", "Biri", "Daar", "Farideh", "Harann"]
+    },
+    "features":[
+      "ancestry: black - breath weapon & resistance: acid",
+      "ancestry: blue - breath weapon & resistance: lightning",
+      "ancestry: brass - breath weapon & resistance: fire",
+      "ancestry: bronze - breath weapon & resistance: lightning",
+      "ancestry: copper - breath weapon & resistance: acid",
+      "ancestry: gold - breath weapon & resistance: fire",
+      "ancestry: green - breath weapon & resistance: poison",
+      "ancestry: red - breath weapon & resistance: fire",
+      "ancestry: silver - breath weapon & resistance: cold",
+      "ancestry: white - breath weapon & resistance: cold"
+     ],
+    "skill proficiencies":[],
+    "armor proficiencies": [],
+    "weapon proficiencies": [],
+    "tool proficiencies": [],
+    "languages":["common", "draconic"]
+  },
   "languages":[
     "dwarvish", 
     "elvish", 

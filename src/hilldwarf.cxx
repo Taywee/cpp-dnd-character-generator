@@ -5,14 +5,12 @@
 
 #include <memory>
 #include <string>
-#include <iostream>
 #include <fstream>
-#include <vector>
 
 using namespace nlohmann;
 
 HillDwarf::HillDwarf(std::string race, std::string parent) :
-	Dwarf(),
+	Dwarf::Dwarf(),
 	r_raceName{ race },
 	r_parentRace{ parent }
 {
@@ -20,13 +18,13 @@ HillDwarf::HillDwarf(std::string race, std::string parent) :
 	json tables;
 	i >> tables;
 
-	for (std::string feature : tables["HillDwarf"]["features"]) {
+	for (std::string feature : tables[r_raceName]["features"]) {
 		r_racialFeatures.push_back(feature);
 	}
 }
 
-std::string HillDwarf::raceName() { return "HillDwarf"; }
-std::string HillDwarf::parentRace() { return "Dwarf"; }
+std::string HillDwarf::raceName() { return r_raceName; }
+std::string HillDwarf::parentRace() { return r_parentRace; }
 
 std::unique_ptr<Race> HillDwarf::generate() {
 		return std::make_unique<HillDwarf>();

@@ -13,6 +13,8 @@ add_executable(
     src/hilldwarf.cxx
     src/human.cxx
     src/elf.cxx
+    src/highelf.cxx
+    src/dragonborn.cxx
     src/main.cxx
     src/race.cxx
     src/attributes.cxx

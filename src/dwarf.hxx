@@ -3,7 +3,6 @@
 
 #include <string>
 #include <memory>
-#include <vector>
 #include "race.hxx"
 
 class Dwarf : public Race {
@@ -20,6 +19,7 @@ public:
 	std::string raceName() override;
 	std::string parentRace() override;
 	static std::unique_ptr<Race> generate();
+
 };
 
 #endif

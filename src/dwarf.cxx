@@ -7,6 +7,7 @@
 #include <fstream>
 #include <random>
 #include <cstdint>
+#include <stdexcept>
 #include <string>
 #include <vector>
 
@@ -26,13 +27,13 @@ Dwarf::Dwarf(int speed, std::string race, std::string parent) :
 	};
 
 	std::uniform_int_distribution<std::uint8_t> distribution { 
-		0, static_cast<unsigned char>((tables["Dwarf"]["tool proficiencies"].size()-1))
+		0, static_cast<unsigned char>((tables[r_parentRace]["tool proficiencies"].size()-1))
 	};
 
-	r_toolProficiencies.push_back(tables["Dwarf"]["tool proficiencies"][distribution(engine)]);
-	r_weaponProficiencies = generateData("Dwarf", "weapon proficiencies");
-	r_languages = generateData("Dwarf", "languages");
-	r_racialFeatures = generateData("Dwarf", "features");
+	r_toolProficiencies.push_back(tables[r_parentRace]["tool proficiencies"][distribution(engine)]);
+	r_weaponProficiencies = generateData(r_parentRace, "weapon proficiencies");
+	r_languages = generateData(r_parentRace, "languages");
+	r_racialFeatures = generateData(r_parentRace, "features");
 }
 
 std::unique_ptr<Race> Dwarf::generate() {
@@ -49,10 +50,12 @@ std::unique_ptr<Race> Dwarf::generate() {
 		
 		case 1:
 			return HillDwarf::generate();
+
+		default:
+			throw std::runtime_error("UNREACHABLE");
 	}
-	__builtin_unreachable();
 }
 
 int Dwarf::getSpeed() { return r_speed; }
-std::string Dwarf::raceName() { return "Dwarf"; }
-std::string Dwarf::parentRace() { return "Dwarf"; } 
+std::string Dwarf::raceName() { return r_raceName; }
+std::string Dwarf::parentRace() { return r_parentRace; } 

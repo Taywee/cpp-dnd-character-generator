@@ -1,6 +1,8 @@
 #include "race.hxx"
 #include "dwarf.hxx"
 #include "human.hxx"
+#include "elf.hxx"
+#include "dragonborn.hxx"
 #include "json.hpp"
 
 #include <memory>
@@ -23,17 +25,20 @@ std::unique_ptr<Race> Race::generate() {
 	static std::default_random_engine engine {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())
 	};
-	std::uniform_int_distribution<std::uint8_t> distribution {0, 1};
+	std::uniform_int_distribution<std::uint8_t> distribution {0, 3};
 	
 	switch (distribution(engine)) {
 		case 0:
 			return Dwarf::generate();
 		case 1:
 			return Human::generate();
+		case 2:
+			return Elf::generate();
+		case 3:
+			return Dragonborn::generate();
 
 		default:
 			throw std::runtime_error("UNREACHABLE");
 
 	}
 }
-

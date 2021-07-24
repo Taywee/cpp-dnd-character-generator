@@ -20,7 +20,7 @@ Human::Human(int speed, std::string race, std::string parent) :
 	json tables;
 	i >> tables;
 	
-	r_languages = generateData("Human", "languages");
+	r_languages = generateData(r_parentRace, "languages");
 
 	static std::default_random_engine engine {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())
@@ -34,8 +34,8 @@ Human::Human(int speed, std::string race, std::string parent) :
 }
 
 int Human::getSpeed() { return r_speed; }
-std::string Human::raceName() { return "Human"; }
-std::string Human::parentRace() { return "Human"; }
+std::string Human::raceName() { return r_raceName; }
+std::string Human::parentRace() { return r_parentRace; }
 
 std::unique_ptr<Race> Human::generate() {
 	return std::make_unique<Human>();
