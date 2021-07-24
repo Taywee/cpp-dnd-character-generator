@@ -27,13 +27,13 @@ Dwarf::Dwarf(int speed, std::string race, std::string parent) :
 	};
 
 	std::uniform_int_distribution<std::uint8_t> distribution { 
-		0, static_cast<unsigned char>((tables[r_parentRace]["tool proficiencies"].size()-1))
+		0, static_cast<unsigned char>((tables[r_raceName]["tool proficiencies"].size()-1))
 	};
 
-	r_toolProficiencies.push_back(tables[r_parentRace]["tool proficiencies"][distribution(engine)]);
-	r_weaponProficiencies = generateData(r_parentRace, "weapon proficiencies");
-	r_languages = generateData(r_parentRace, "languages");
-	r_racialFeatures = generateData(r_parentRace, "features");
+	r_toolProficiencies.push_back(tables[r_raceName]["tool proficiencies"][distribution(engine)]);
+	r_weaponProficiencies = generateData(r_raceName, "weapon proficiencies");
+	r_languages = generateData(r_raceName, "languages");
+	r_racialFeatures = generateData(r_raceName, "features");
 }
 
 std::unique_ptr<Race> Dwarf::generate() {

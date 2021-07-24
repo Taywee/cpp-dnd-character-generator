@@ -14,6 +14,8 @@ add_executable(
     src/human.cxx
     src/elf.cxx
     src/highelf.cxx
+    src/gnome.cxx
+    src/rockgnome.cxx
     src/dragonborn.cxx
     src/main.cxx
     src/race.cxx

@@ -20,7 +20,7 @@ Human::Human(int speed, std::string race, std::string parent) :
 	json tables;
 	i >> tables;
 	
-	r_languages = generateData(r_parentRace, "languages");
+	r_languages = generateData(r_raceName, "languages");
 
 	static std::default_random_engine engine {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())

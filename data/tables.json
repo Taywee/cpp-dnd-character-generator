@@ -86,6 +86,44 @@
       "dwarven toughness"
     ]
   },
+  "Gnome":{
+    "height":{
+      "min":91,
+      "max":121,
+      "mean":106,
+      "deviation":7
+    },
+    "weight":{
+      "min":20,
+      "max":70,
+      "mean":40,
+      "deviation":10
+    },
+    "age":{
+      "min":18,
+      "max":500,
+      "mean":250
+    },
+    "names":{
+      "male":["Alston", "Boodynock", "Brocc", "Eldon", "Gerbo", "Zook"],
+      "female":["Bimpnottin", "Ellyjobell", "Lilli", "Lorilla", "Waywocket"]
+    },
+    "features":[
+      "darkvision",
+      "gnome cunning"
+    ],
+    "skill proficiencies":[],
+    "armor proficiencies":[],
+    "weapon proficiencies":[],
+    "tool proficiencies":[],
+    "languages":["common", "gnomish"]
+  },
+  "RockGnome":{
+    "features":[
+      "artificer's lore",
+      "tinker"
+    ]
+  },
   "Elf":{
     "height":{
       "min":152,
