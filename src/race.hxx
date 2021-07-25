@@ -14,6 +14,7 @@ protected:
 	std::vector<std::string> r_toolProficiencies;
 	std::vector<std::string> r_weaponProficiencies;
 	std::vector<std::string> r_armorProficiencies;
+	std::vector<std::string> r_cantrips; 
 
 public:
 	virtual int getSpeed() = 0;

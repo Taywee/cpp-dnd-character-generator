@@ -4,6 +4,7 @@
 #include "json.hpp"
 
 #include <memory>
+#include <random>
 #include <string>
 #include <fstream>
 
@@ -21,6 +22,16 @@ HighElf::HighElf(std::string race, std::string parent) :
 	for (std::string proficiency : tables[r_raceName]["weapon proficiencies"]) {
 		r_weaponProficiencies.push_back(proficiency);
 	}
+
+	static std::default_random_engine engine {
+		static_cast<std::default_random_engine::result_type>(std::random_device{}())
+	};
+	std::uniform_int_distribution<std::uint8_t> distribution {
+		0, static_cast<unsigned char>((tables["wizard cantrips"]).size()-1)
+	};
+
+	r_cantrips.push_back(tables["wizard cantrips"][distribution(engine)]);
+
 }
 
 std::string HighElf::raceName() { return r_raceName; }

@@ -13,6 +13,7 @@ int main(int argc, char **argv) {
 	character.printLanguages();
 	character.printSpeed();
 	character.printProficiencies();
+	character.printCantrips();
 	
 	return 0;
 }

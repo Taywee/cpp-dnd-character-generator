@@ -23,6 +23,8 @@ private:
 	std::vector<std::string> m_toolProficiencies;
 	std::vector<std::string> m_armorProficiencies;
 	std::vector<std::string> m_weaponProficiencies;
+	std::vector<std::string> m_cantrips;
+	std::vector<std::string> m_spells;
 
 	int m_speed;
 
@@ -35,6 +37,8 @@ public:
 	void printPhysAttributes();
 	void printRacialFeatures();
 	void printProficiencies();
+	void printCantrips();
+	void printSpells();
 	std::string getName();
 	std::string getGender();
 	std::string getAlignment();

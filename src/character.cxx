@@ -21,6 +21,7 @@ Character::Character() {
 	m_armorProficiencies = m_race->r_armorProficiencies;
 	m_weaponProficiencies = m_race->r_weaponProficiencies;
 	m_toolProficiencies = m_race->r_toolProficiencies;
+	m_cantrips = m_race->r_cantrips;	
 
 }
 
@@ -28,6 +29,21 @@ void Character::printSpeed() {
 	std::cout << "Speed: " << m_speed << '\n';
 }
 
+void Character::printCantrips() {
+	std::cout << "Cantrips: ";
+	for (auto& cantrip : m_cantrips) {
+		std::cout << cantrip << ", ";
+	}
+std::cout << '\n';
+}
+
+void Character::printSpells() {
+	std::cout << "Spells: ";
+	for (auto& spell : m_spells) {
+		std::cout << spell << ", ";
+	}
+std::cout << '\n';
+}
 void Character::printRacialFeatures() {
 	std::cout << "Racial features: ";
 	for (auto& feature : m_racialFeatures) {
