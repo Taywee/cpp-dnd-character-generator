@@ -1,7 +1,7 @@
 #include "character.hxx"
 #include "attributes.hxx"
 #include "generateFunctions.hxx"
-#include "race.hxx"
+#include "races/race.hxx"
 #include <iostream>
 #include <memory>
 #include <random>

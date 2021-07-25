@@ -1,7 +1,6 @@
 #include "tiefling.hxx"
-#include "generateFunctions.hxx"
-#include "json.hpp"
-#include "character.hxx"
+#include "../generateFunctions.hxx"
+#include "../json.hpp"
 #include <fstream>
 #include <memory>
 #include <random>

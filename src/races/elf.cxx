@@ -1,8 +1,8 @@
 #include "elf.hxx"
 #include "race.hxx"
-#include "json.hpp"
+#include "../json.hpp"
 #include "highelf.hxx"
-#include "generateFunctions.hxx"
+#include "../generateFunctions.hxx"
 #include <memory>
 #include <random>
 #include <cstdint>

@@ -1,14 +1,14 @@
 {
   "alignment":[
-    "lawful good",
-    "neutral good",
-    "chaotic good",
-    "lawful neutral",
-    "true neutral",
-    "chaotic neutral",
-    "lawful evil",
-    "neutral evil",
-    "chaotic evil"
+    "Lawful Good",
+    "Neutral Good",
+    "Chaotic Good",
+    "Lawful Neutral",
+    "True Neutral",
+    "Chaotic Neutral",
+    "Lawful Evil",
+    "Neutral Evil",
+    "Chaotic Evil"
   ],
   "Human":{
     "height":{
@@ -32,12 +32,139 @@
       "male":["Bill", "Bob", "Nob"],
       "female":["Anna", "Sandy", "Alice"]
     },
-    "languages":["common"],
+    "languages":["Common"],
     "features":[],
     "skill proficiencies":[],
     "armor proficiencies":[],
     "weapon proficiencies":[],
     "tool proficiencies":[]
+  },
+  "Tiefling":{
+    "height":{
+      "min":152,
+      "max":213,
+      "mean":183,
+      "deviation":10
+    },
+    "weight":{
+      "min":45,
+      "max":113,
+      "mean":79,
+      "deviation":7
+    },
+    "age":{
+      "min":18,
+      "max":90,
+      "mean":54
+    },
+    "names":{
+      "male":["Chem", "Akmenos", "Barakas", "Damakos", "Leucis"],
+      "female":["Akta", "Bryseis", "Cirella", "Damaia", "Rieta"]
+    },
+    "languages":["Common", "Infernal"],
+    "features":["Darkvision", "Hellish Resistance"],
+    "skill proficiencies":[],
+    "armor proficiencies":[],
+    "weapon proficiencies":[],
+    "tool proficiencies":[]
+  },
+  "HalfOrc":{
+    "height":{
+      "min":152,
+      "max":213,
+      "mean":193,
+      "deviation":10
+    },
+    "weight":{
+      "min":80,
+      "max":113,
+      "mean":97,
+      "deviation":7
+    },
+    "age":{
+      "min":18,
+      "max":70,
+      "mean":44
+    },
+    "names":{
+      "male":["Dench", "Feng", "Grell", "Henk", "Imsh"],
+      "female":["Baggi", "Emen", "Kansif", "Myev", "Sutha"]
+    },
+    "languages":["Common", "Orc"],
+    "features":["Darkvision", "Relentless Endurance", "Savage Attacks"],
+    "skill proficiencies":["Intimidation"],
+    "armor proficiencies":[],
+    "weapon proficiencies":[],
+    "tool proficiencies":[]
+  },
+  "HalfElf":{
+    "height":{
+      "min":152,
+      "max":213,
+      "mean":183,
+      "deviation":10
+    },
+    "weight":{
+      "min":45,
+      "max":113,
+      "mean":79,
+      "deviation":7
+    },
+    "age":{
+      "min":18,
+      "max":200,
+      "mean":109
+    },
+    "names":{
+      "male":["Bill", "Bob", "Nob"],
+      "female":["Anna", "Sandy", "Alice"]
+    },
+    "languages":["Common", "Elvish"],
+    "features":["Darkvision", "Fey Ancestry"],
+    "skill proficiencies":[],
+    "armor proficiencies":[],
+    "weapon proficiencies":[],
+    "tool proficiencies":[]
+  },
+  "Dragonborn":{
+    "height":{
+      "min":182,
+      "max":228,
+      "mean":205,
+      "deviation":10
+    },
+    "weight":{
+      "min":150,
+      "max":350,
+      "mean":250,
+      "deviation":20
+    },
+    "age":{
+      "min":15,
+      "max":80,
+      "mean":48
+    },
+    "names":{
+      "male":["Arjhan", "Balasar", "Donaar", "Ghesh", "Heskan"],
+      "female":["Akra", "Biri", "Daar", "Farideh", "Harann"]
+    },
+    "features":[
+      "Ancestry: Black, Breath Weapon: Acid, Resistance: Acid",
+      "Ancestry: Blue, Breath Weapon: Lightning, Resistance: Lightning",
+      "Ancestry: Brass, Breath Weapon: Fire, Resistance: Fire",
+      "Ancestry: Bronze, Breath Weapon: Lightning, Resistance: Lightning",
+      "Ancestry: Copper, Breath Weapon: Acid, Resistance: Acid",
+      "Ancestry: Gold, Breath Weapon: Fire, Resistance: Fire",
+      "Ancestry: Green, Breath Weapon: Poison, Resistance: Poison",
+      "Ancestry: Red, Breath Weapon: Fire, Resistance: Fire",
+      "Ancestry: Silver, Breath Weapon: Cold, Resistance: Cold",
+      "Ancestry: White, Breath Weapon: Cold, Resistance: Cold"
+    ],
+    "skill proficiencies":[],
+    "armor proficiencies": [],
+    "weapon proficiencies": [],
+    "tool proficiencies": [],
+    "languages":["Common", "Draconic"]
   },
   "Dwarf":{
     "height":{
@@ -62,29 +189,61 @@
       "female":["Amber", "Dagnal", "Hlin"]
     },
     "features":[
-      "darkvision",
-      "dwarven resilience",
-      "stonecunning"
+      "Darkvision",
+      "Dwarven Resilience",
+      "Stonecunning"
     ],
     "skill proficiencies":[],
     "armor proficiencies":[],
     "weapon proficiencies":[
-      "battleaxe",
-      "handaxe",
-      "light hammer",
-      "warhammer"
+      "Battleaxe",
+      "Handaxe",
+      "Light Hammer",
+      "Warhammer"
     ],
     "tool proficiencies":[
-      "smith's tools",
-      "brewer's supplies",
-      "mason's tools"
+      "Smith's Tools",
+      "Brewer's Supplies",
+      "Mason's Tools"
     ],
-    "languages":["common", "dwarvish"]
+    "languages":["Common", "Dwarvish"]
   },
   "HillDwarf":{
    "features":[
-      "dwarven toughness"
+      "Dwarven Toughness"
     ]
+  },
+  "Halfling":{
+    "height":{
+      "min":76,
+      "max":121,
+      "mean":91,
+      "deviation":7
+    },
+    "weight":{
+      "min":20,
+      "max":60,
+      "mean":40,
+      "deviation":7
+    },
+    "age":{
+      "min":20,
+      "max":150,
+      "mean":85
+    },
+    "names":{
+      "male":["Alton", "Cade", "Eldon", "Finnan", "Lyle"],
+      "female":["Andry", "Bree", "Cora", "Lavinia", "Verna"]
+    },
+    "features":["Lucky", "Brave", "Halfling Nimbleness"],
+    "skill proficiencies":[],
+    "armor proficiencies":[],
+    "weapon proficiencies":[],
+    "tool proficiencies":[],
+    "languages":["Common", "Halfling"]
+  },
+  "Lightfoot Halfling":{
+   "features":["Naturally Stealthy"]
   },
   "Gnome":{
     "height":{
@@ -109,19 +268,19 @@
       "female":["Bimpnottin", "Ellyjobell", "Lilli", "Lorilla", "Waywocket"]
     },
     "features":[
-      "darkvision",
-      "gnome cunning"
+      "Darkvision",
+      "Gnome Cunning"
     ],
     "skill proficiencies":[],
     "armor proficiencies":[],
     "weapon proficiencies":[],
     "tool proficiencies":[],
-    "languages":["common", "gnomish"]
+    "languages":["Common", "Gnomish"]
   },
   "RockGnome":{
     "features":[
-      "artificer's lore",
-      "tinker"
+      "Artificer's Lore",
+      "Tinker"
     ]
   },
   "Elf":{
@@ -147,79 +306,75 @@
       "female":["Adrie", "Althaea", "Bethrynna", "Caelynn", "Drusilia"]
     },
     "features":[
-      "darkvision", 
-      "fey ancestry", 
-      "trance"
+      "Darkvision", 
+      "Fey Ancestry", 
+      "Trance"
     ],
-    "skill proficiencies":["perception"],
+    "skill proficiencies":["Perception"],
     "armor proficiencies": [],
     "weapon proficiencies": [],
     "tool proficiencies": [],
-    "languages":["common", "elvish"]
+    "languages":["Common", "Elvish"]
   },
   "HighElf":{
     "weapon proficiencies": [
-      "longsword", 
-      "shortsword", 
-      "shortbow", 
-      "longbow"
+      "Longsword", 
+      "Shortsword", 
+      "Shortbow", 
+      "Longbow"
     ]
   },
-  "Dragonborn":{
-    "height":{
-      "min":182,
-      "max":228,
-      "mean":205,
-      "deviation":10
-    },
-    "weight":{
-      "min":150,
-      "max":350,
-      "mean":250,
-      "deviation":20
-    },
-    "age":{
-      "min":15,
-      "max":80,
-      "mean":48
-    },
-    "names":{
-      "male":["Arjhan", "Balasar", "Donaar", "Ghesh", "Heskan"],
-      "female":["Akra", "Biri", "Daar", "Farideh", "Harann"]
-    },
-    "features":[
-      "ancestry: black - breath weapon & resistance: acid",
-      "ancestry: blue - breath weapon & resistance: lightning",
-      "ancestry: brass - breath weapon & resistance: fire",
-      "ancestry: bronze - breath weapon & resistance: lightning",
-      "ancestry: copper - breath weapon & resistance: acid",
-      "ancestry: gold - breath weapon & resistance: fire",
-      "ancestry: green - breath weapon & resistance: poison",
-      "ancestry: red - breath weapon & resistance: fire",
-      "ancestry: silver - breath weapon & resistance: cold",
-      "ancestry: white - breath weapon & resistance: cold"
-     ],
-    "skill proficiencies":[],
-    "armor proficiencies": [],
-    "weapon proficiencies": [],
-    "tool proficiencies": [],
-    "languages":["common", "draconic"]
-  },
   "languages":[
-    "dwarvish", 
-    "elvish", 
-    "giant", 
-    "gnomish", 
-    "goblin", 
-    "halfling", 
-    "orc", 
-    "abyssal", 
-    "celestial", 
-    "draconic", 
-    "deep speech", 
-    "infernal", 
-    "primordial", 
-    "sylvan", 
-    "undercommon"
+    "Dwarvish", 
+    "Elvish", 
+    "Giant", 
+    "Gnomish", 
+    "Goblin", 
+    "Halfling", 
+    "Orc", 
+    "Abyssal", 
+    "Celestial", 
+    "Draconic", 
+    "Deep Speech", 
+    "Infernal", 
+    "Primordial", 
+    "Sylvan", 
+    "Undercommon"
+  ],
+  "skill proficiencies": [
+    "Athletics",
+    "Acrobatics",
+    "Sleight of Hand",
+    "Stealth",
+    "Arcana",
+    "Histroy",
+    "Investigation",
+    "Nature",
+    "Religion",
+    "Animal Handling",
+    "Insight",
+    "Medicine",
+    "Perception",
+    "Survival",
+    "Deception",
+    "Intimidation",
+    "Performance",
+    "Persuasion"
+  ],
+  "wizard cantrips": [
+    "Acid Splash",
+    "Chill Touch",
+    "Dancing Lights",
+    "Fire Bolt",
+    "Light",
+    "Mage Hand",
+    "Mending",
+    "Message",
+    "Minor Illusion",
+    "Poison Spray",
+    "Prestidigitation",
+    "Ray of Frost",
+    "Shocking Grasp",
+    "True Strike"
   ]
 }

@@ -1,7 +1,7 @@
 #include "lightfoothalfling.hxx"
 #include "halfling.hxx"
-#include "generateFunctions.hxx"
-#include "json.hpp"
+#include "../generateFunctions.hxx"
+#include "../json.hpp"
 #include "race.hxx"
 
 #include <string>

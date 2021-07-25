@@ -1,5 +1,5 @@
 #include "race.hxx"
-#include "character.hxx"
+#include "../character.hxx"
 #include "dwarf.hxx"
 #include "gnome.hxx"
 #include "halfling.hxx"
@@ -9,7 +9,7 @@
 #include "dragonborn.hxx"
 #include "halfelf.hxx"
 #include "tiefling.hxx"
-#include "json.hpp"
+#include "../json.hpp"
 
 #include <memory>
 #include <stdexcept>

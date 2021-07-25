@@ -1,7 +1,7 @@
 #include "dwarf.hxx"
 #include "hilldwarf.hxx"
-#include "json.hpp"
-#include "generateFunctions.hxx"
+#include "../json.hpp"
+#include "../generateFunctions.hxx"
 
 #include <memory>
 #include <fstream>

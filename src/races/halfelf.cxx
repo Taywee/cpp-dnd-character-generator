@@ -1,8 +1,7 @@
 #include "halfelf.hxx"
-#include "generateFunctions.hxx"
 #include "highelf.hxx"
-#include "json.hpp"
-#include "character.hxx"
+#include "../generateFunctions.hxx"
+#include "../json.hpp"
 #include <fstream>
 #include <algorithm>
 #include <memory>

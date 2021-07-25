@@ -1,8 +1,8 @@
 #include "gnome.hxx"
 #include "rockgnome.hxx"
 #include "race.hxx"
-#include "json.hpp"
-#include "generateFunctions.hxx"
+#include "../json.hpp"
+#include "../generateFunctions.hxx"
 #include <memory>
 #include <random>
 #include <cstdint>

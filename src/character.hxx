@@ -6,7 +6,7 @@
 #include <string>
 #include <map>
 #include <vector>
-#include "race.hxx"
+#include "races/race.hxx"
 
 class Character {
 

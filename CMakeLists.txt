@@ -9,17 +9,22 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_executable(
     character-generator
     src/character.cxx
-    src/dwarf.cxx
-    src/hilldwarf.cxx
-    src/human.cxx
-    src/elf.cxx
-    src/highelf.cxx
-    src/gnome.cxx
-    src/rockgnome.cxx
-    src/dragonborn.cxx
-    src/main.cxx
-    src/race.cxx
     src/attributes.cxx
     src/generateFunctions.cxx
+    src/main.cxx
+    src/races/human.cxx
+    src/races/dragonborn.cxx
+    src/races/dwarf.cxx
+    src/races/hilldwarf.cxx
+    src/races/elf.cxx
+    src/races/highelf.cxx
+    src/races/gnome.cxx
+    src/races/rockgnome.cxx
+    src/races/halfling.cxx
+    src/races/lightfoothalfling.cxx
+    src/races/halfelf.cxx
+    src/races/halforc.cxx
+    src/races/tiefling.cxx
+    src/races/race.cxx
     )
 

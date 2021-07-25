@@ -1,6 +1,6 @@
 #include "dragonborn.hxx"
-#include "generateFunctions.hxx"
-#include "json.hpp"
+#include "../generateFunctions.hxx"
+#include "../json.hpp"
 
 #include <fstream>
 #include <memory>
