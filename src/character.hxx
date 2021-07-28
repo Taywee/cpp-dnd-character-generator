@@ -6,6 +6,8 @@
 #include <string>
 #include <map>
 #include <vector>
+#include "classes/barbarian.hxx"
+#include "classes/class.hxx"
 #include "races/race.hxx"
 
 class Character {
@@ -17,8 +19,8 @@ private:
 	std::string m_gender;
 	std::map<std::string, int> m_appearance;
 	std::array<int, 6> m_attributes;
-	std::vector<std::string> m_languages;
 	std::vector<std::string> m_racialFeatures;
+	std::vector<std::string> m_languages;
 	std::vector<std::string> m_skillProficiencies;
 	std::vector<std::string> m_toolProficiencies;
 	std::vector<std::string> m_armorProficiencies;
@@ -44,6 +46,8 @@ public:
 	std::string getAlignment();
 	const Race &getRace() const;
 	Race &getRace();
+
+	friend class Barbarian;
 
 };
 #endif

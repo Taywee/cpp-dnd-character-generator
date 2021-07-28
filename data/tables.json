@@ -324,6 +324,14 @@
       "Longbow"
     ]
   },
+  "Barbarian":{
+    "saving throws":["Strength", "Constitution"],
+    "armor proficiencies":["Light armor", "Medium armor", "Shiedls"],
+    "weapon proficiencies":["Simple weapons, Martial weapons"],
+    "tool proficiencies":[],
+    "skill proficiencies":["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"],
+    "features":["Rage", "Unarmored Defense"]
+  },
   "languages":[
     "Dwarvish", 
     "Elvish", 

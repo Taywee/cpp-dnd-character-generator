@@ -77,14 +77,14 @@ std::map<std::string, int> generateAppearance(std::string race) {
 	return attributes;
 }
 
-std::vector<std::string> generateData(std::string parentRace, std::string category) {
+std::vector<std::string> generateData(std::string parent, std::string category) {
 	std::ifstream i("../data/tables.json");
 	json tables;
 	i >> tables;
 	
 	std::vector<std::string> data;
 
-	for (std::string element : tables[parentRace][category]) {
+	for (std::string element : tables[parent][category]) {
 		data.push_back(element);
 	}
 

@@ -1,5 +1,4 @@
 #include "race.hxx"
-#include "../character.hxx"
 #include "dwarf.hxx"
 #include "gnome.hxx"
 #include "halfling.hxx"
@@ -9,24 +8,16 @@
 #include "dragonborn.hxx"
 #include "halfelf.hxx"
 #include "tiefling.hxx"
-#include "../json.hpp"
 
 #include <memory>
 #include <stdexcept>
 #include <random>
 #include <cstdint>
-#include <fstream>
-
-using namespace nlohmann;
 
 Race::~Race() {}
 
 std::unique_ptr<Race> Race::generate() {
 
-	std::ifstream i("../data/tables.json");
-	json tables;
-	i >> tables;
-	
 	static std::default_random_engine engine {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())
 	};
