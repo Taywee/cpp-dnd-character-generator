@@ -26,6 +26,6 @@ HillDwarf::HillDwarf(std::string race, std::string parent) :
 std::string HillDwarf::raceName() { return r_raceName; }
 std::string HillDwarf::parentRace() { return r_parentRace; }
 
-std::unique_ptr<Race> HillDwarf::generate() {
+std::unique_ptr<Race> HillDwarf::generate(Proficiencies &proficiencies) {
 		return std::make_unique<HillDwarf>();
 	}

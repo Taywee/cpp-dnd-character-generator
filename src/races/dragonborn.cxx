@@ -11,11 +11,7 @@
 
 using namespace nlohmann;
 
-Dragonborn::Dragonborn(int speed, std::string race, std::string parent) :
-	r_speed { speed },
-	r_raceName { race },
-	r_parentRace{ parent }
-{
+Dragonborn::Dragonborn(Proficiencies &proficiencies) {
 	std::ifstream i("../data/tables.json");
 	json tables;
 	i >> tables;
@@ -36,6 +32,6 @@ int Dragonborn::getSpeed() { return r_speed; }
 std::string Dragonborn::raceName() { return r_raceName; }
 std::string Dragonborn::parentRace() { return r_parentRace; }
 
-std::unique_ptr<Race> Dragonborn::generate() {
-	return std::make_unique<Dragonborn>();
+std::unique_ptr<Race> Dragonborn::generate(Proficiencies &proficiencies) {
+	return std::make_unique<Dragonborn>(proficiencies);
 }

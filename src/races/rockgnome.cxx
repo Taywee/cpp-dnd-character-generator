@@ -26,6 +26,6 @@ RockGnome::RockGnome(std::string race, std::string parent) :
 std::string RockGnome::raceName() { return r_raceName; }
 std::string RockGnome::parentRace() { return r_parentRace; }
 
-std::unique_ptr<Race> RockGnome::generate() {
+std::unique_ptr<Race> RockGnome::generate(Proficiencies &proficiencies) {
 	return std::make_unique<RockGnome>();
 }

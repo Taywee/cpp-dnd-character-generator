@@ -37,6 +37,6 @@ HighElf::HighElf(std::string race, std::string parent) :
 std::string HighElf::raceName() { return r_raceName; }
 std::string HighElf::parentRace() { return r_parentRace; }
 
-std::unique_ptr<Race> HighElf::generate() {
+std::unique_ptr<Race> HighElf::generate(Proficiencies &proficiencies) {
 	return std::make_unique<HighElf>();
 }

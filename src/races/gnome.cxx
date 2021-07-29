@@ -17,7 +17,7 @@ Gnome::Gnome(int speed, std::string race, std::string parent) :
 	r_languages = generateData(r_raceName, "languages");
 }
 
-std::unique_ptr<Race> Gnome::generate() {
+std::unique_ptr<Race> Gnome::generate(Proficiencies &proficiencies) {
 
 	static std::default_random_engine engine {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())

@@ -26,5 +26,6 @@ add_executable(
     src/races/halforc.cxx
     src/races/tiefling.cxx
     src/races/race.cxx
+    src/proficiencies.cxx
     )
 

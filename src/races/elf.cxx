@@ -18,7 +18,7 @@ Elf::Elf(int speed, std::string race, std::string parent) :
 	r_skillProficiencies = generateData(r_raceName, "skill proficiencies");
 }
 
-std::unique_ptr<Race> Elf::generate() {
+std::unique_ptr<Race> Elf::generate(Proficiencies &proficiencies) {
 
 	static std::default_random_engine engine {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())

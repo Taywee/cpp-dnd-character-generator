@@ -9,7 +9,7 @@
 
 Character::Character() {
 	setAttributes(m_attributes);
-	m_race = Race::generate(); 
+	m_race = Race::generate(proficiencies); 
 	m_gender = generateGender();
 	m_name = generateCharacterName(m_race->parentRace(), m_gender);
 	m_alignment = generateAlignment();
@@ -17,12 +17,7 @@ Character::Character() {
 	m_speed = m_race->getSpeed();
 	m_languages = m_race->r_languages;
 	m_racialFeatures= m_race->r_racialFeatures;
-	m_skillProficiencies = m_race->r_skillProficiencies;
-	m_armorProficiencies = m_race->r_armorProficiencies;
-	m_weaponProficiencies = m_race->r_weaponProficiencies;
-	m_toolProficiencies = m_race->r_toolProficiencies;
 	m_cantrips = m_race->r_cantrips;	
-
 }
 
 void Character::printSpeed() { 
@@ -75,26 +70,27 @@ void Character::printPhysAttributes() {
 }
 
 void Character::printProficiencies() {
-	std::cout << "Skill proficiencies: ";
-	for (std::string proficiency : m_skillProficiencies) {
-		std::cout << proficiency << ", ";
-	}
-	std::cout << '\n';
-	std::cout << "Weapon proficiencies: ";
-	for (std::string proficiency : m_weaponProficiencies) {
-		std::cout << proficiency << ", ";
-	}
-	std::cout << '\n';
-	std::cout << "Armor proficiencies: ";
-	for (std::string proficiency : m_armorProficiencies) {
-		std::cout << proficiency << ", ";
-	}
-	std::cout << '\n';
-	std::cout << "Tool proficiencies: ";
-	for (std::string proficiency : m_toolProficiencies) {
-		std::cout << proficiency << ", ";
-	}
-	std::cout << '\n';
+    std::string last_category;
+    bool first_proficiency = true;
+    for (const auto &proficiency: proficiencies) {
+        // The category has changed 
+        if (proficiency.category() != last_category) {
+            // If the last_category isn't enmpty, we need a newline, because we're not on the first category.
+            if (!last_category.empty()) {
+                std::cout << '\n';
+            }
+            last_category = proficiency.category();
+            std::cout << last_category << " proficiencies: ";
+            first_proficiency = true;
+        }
+        // Print a comma before every non-first proficiency to have a properly comma-separated list.
+        if (!first_proficiency) {
+            std::cout << ", ";
+        }
+        std::cout << proficiency.name();
+        first_proficiency = false;
+    }
+    std::cout << '\n';
 }
 
 std::string Character::getName() { return m_name; }

@@ -16,7 +16,7 @@
 
 Race::~Race() {}
 
-std::unique_ptr<Race> Race::generate() {
+std::unique_ptr<Race> Race::generate(Proficiencies &proficiencies) {
 
 	static std::default_random_engine engine {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())
@@ -25,23 +25,23 @@ std::unique_ptr<Race> Race::generate() {
 	
 	switch (distribution(engine)) {
 		case 0:
-			return Dwarf::generate();
+			return Dwarf::generate(proficiencies);
 		case 1:
-			return Human::generate();
+			return Human::generate(proficiencies);
 		case 2:
-			return Elf::generate();
+			return Elf::generate(proficiencies);
 		case 3:
-			return Dragonborn::generate();
+			return Dragonborn::generate(proficiencies);
 		case 4:
-			return Gnome::generate();
+			return Gnome::generate(proficiencies);
 		case 5:
-			return Halfling::generate();
+			return Halfling::generate(proficiencies);
 		case 6:
-			return HalfElf::generate();
+			return HalfElf::generate(proficiencies);
 		case 7:
-			return HalfOrc::generate();
+			return HalfOrc::generate(proficiencies);
 		case 8:
-			return Tiefling::generate();
+			return Tiefling::generate(proficiencies);
 
 		default:
 			throw std::runtime_error("UNREACHABLE");

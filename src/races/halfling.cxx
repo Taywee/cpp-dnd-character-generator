@@ -26,7 +26,7 @@ Halfling::Halfling(int speed, std::string race, std::string parent) :
 
 }
 
-std::unique_ptr<Race> Halfling::generate() {
+std::unique_ptr<Race> Halfling::generate(Proficiencies &proficiencies) {
 
 	static std::default_random_engine engine {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())

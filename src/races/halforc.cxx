@@ -29,6 +29,6 @@ int HalfOrc::getSpeed() { return r_speed; }
 std::string HalfOrc::raceName() { return r_raceName; }
 std::string HalfOrc::parentRace() { return r_parentRace; }
 
-std::unique_ptr<Race> HalfOrc::generate() {
+std::unique_ptr<Race> HalfOrc::generate(Proficiencies &proficiencies) {
 	return std::make_unique<HalfOrc>();
 }

@@ -45,6 +45,6 @@ int HalfElf::getSpeed() { return r_speed; }
 std::string HalfElf::raceName() { return r_raceName; }
 std::string HalfElf::parentRace() { return r_parentRace; }
 
-std::unique_ptr<Race> HalfElf::generate() {
+std::unique_ptr<Race> HalfElf::generate(Proficiencies &proficiencies) {
 	return std::make_unique<HalfElf>();
 }

@@ -16,6 +16,6 @@ public:
 
 	std::string raceName() override;
 	std::string parentRace() override;
-	static std::unique_ptr<Race> generate();
+	static std::unique_ptr<Race> generate(Proficiencies &proficiencies);
 };
 #endif

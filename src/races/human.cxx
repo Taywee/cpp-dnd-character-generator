@@ -36,6 +36,6 @@ int Human::getSpeed() { return r_speed; }
 std::string Human::raceName() { return r_raceName; }
 std::string Human::parentRace() { return r_parentRace; }
 
-std::unique_ptr<Race> Human::generate() {
+std::unique_ptr<Race> Human::generate(Proficiencies &proficiencies) {
 	return std::make_unique<Human>();
 }

@@ -9,6 +9,7 @@
 #include "classes/barbarian.hxx"
 #include "classes/class.hxx"
 #include "races/race.hxx"
+#include "proficiencies.hxx"
 
 class Character {
 
@@ -21,10 +22,7 @@ private:
 	std::array<int, 6> m_attributes;
 	std::vector<std::string> m_racialFeatures;
 	std::vector<std::string> m_languages;
-	std::vector<std::string> m_skillProficiencies;
-	std::vector<std::string> m_toolProficiencies;
-	std::vector<std::string> m_armorProficiencies;
-	std::vector<std::string> m_weaponProficiencies;
+	Proficiencies proficiencies;
 	std::vector<std::string> m_cantrips;
 	std::vector<std::string> m_spells;
 
@@ -46,8 +44,5 @@ public:
 	std::string getAlignment();
 	const Race &getRace() const;
 	Race &getRace();
-
-	friend class Barbarian;
-
 };
 #endif

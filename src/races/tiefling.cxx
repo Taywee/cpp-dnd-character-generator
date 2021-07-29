@@ -29,6 +29,6 @@ int Tiefling::getSpeed() { return r_speed; }
 std::string Tiefling::raceName() { return r_raceName; }
 std::string Tiefling::parentRace() { return r_parentRace; }
 
-std::unique_ptr<Race> Tiefling::generate() {
+std::unique_ptr<Race> Tiefling::generate(Proficiencies &proficiencies) {
 	return std::make_unique<Tiefling>();
 }

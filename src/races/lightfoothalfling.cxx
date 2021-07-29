@@ -28,6 +28,6 @@ LightfootHalfling::LightfootHalfling(int speed, std::string race, std::string pa
 int LightfootHalfling::getSpeed() { return r_speed; }
 std::string LightfootHalfling::raceName() { return r_raceName; }
 std::string LightfootHalfling::parentRace() { return r_parentRace; }
-std::unique_ptr<Race> LightfootHalfling::generate() {
+std::unique_ptr<Race> LightfootHalfling::generate(Proficiencies &proficiencies) {
 	return std::make_unique<LightfootHalfling>();
 }

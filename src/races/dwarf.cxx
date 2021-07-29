@@ -12,11 +12,7 @@
 
 using namespace nlohmann;
 
-Dwarf::Dwarf(int speed, std::string race, std::string parent) :
-	r_speed { speed },
-	r_raceName { race },
-	r_parentRace { parent }
-{
+Dwarf::Dwarf(Proficiencies &proficiencies) {
 	std::ifstream i("../data/tables.json");
 	json tables;
 	i >> tables;
@@ -29,13 +25,17 @@ Dwarf::Dwarf(int speed, std::string race, std::string parent) :
 		0, static_cast<unsigned char>((tables[r_raceName]["tool proficiencies"].size()-1))
 	};
 
-	r_toolProficiencies.push_back(tables[r_raceName]["tool proficiencies"][distribution(engine)]);
-	r_weaponProficiencies = generateData(r_raceName, "weapon proficiencies");
+        // TODO: this can loop forever if all tool proficiencies are already filled.
+	while (!proficiencies.add(Proficiency("Tool", tables[r_raceName]["tool proficiencies"][distribution(engine)]))) {
+	}
+	for (const auto &proficiency: generateData(r_raceName, "weapon proficiencies")) {
+            proficiencies.add(Proficiency("Weapon", proficiency));
+	}
 	r_languages = generateData(r_raceName, "languages");
 	r_racialFeatures = generateData(r_raceName, "features");
 }
 
-std::unique_ptr<Race> Dwarf::generate() {
+std::unique_ptr<Race> Dwarf::generate(Proficiencies &proficiencies) {
 	
 	static std::default_random_engine engine {
 		static_cast<std::default_random_engine::result_type>(std::random_device{}())
@@ -45,10 +45,10 @@ std::unique_ptr<Race> Dwarf::generate() {
 
 	switch (distribution(engine)) {
 		case 0:
-			return std::make_unique<Dwarf>();
+			return std::make_unique<Dwarf>(proficiencies);
 		
 		case 1:
-			return HillDwarf::generate();
+			return HillDwarf::generate(proficiencies);
 
 		default:
 			throw std::runtime_error("UNREACHABLE");

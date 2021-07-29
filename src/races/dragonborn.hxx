@@ -8,17 +8,17 @@
 class Dragonborn : public Race {
 
 private:
-	int r_speed = 30;
-	std::string r_raceName { "Dragonborn" };
-	std::string r_parentRace { "Dragonborn" };
+	static constexpr int r_speed = 30;
+	static constexpr auto r_raceName { "Dragonborn" };
+	static constexpr auto r_parentRace { "Dragonborn" };
 
 public:
-	Dragonborn(int speed=30, std::string race="Dragonborn", std::string parent="Dragonborn");
+	Dragonborn(Proficiencies &proficiencies);
 
 	int getSpeed() override;
 	std::string raceName() override;
 	std::string parentRace() override;
-	static std::unique_ptr<Race> generate();
+	static std::unique_ptr<Race> generate(Proficiencies &proficiencies);
 
 };
 
